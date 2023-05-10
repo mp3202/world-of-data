@@ -1,10 +1,50 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "WoW Classes";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1> List of World of Warcraft Classes </h1>
+@* <p>
+    <a asp-page="Create">Create New</a>
+</p> *@ 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WoWClasses[0].className)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.WoWClasses[0].classSpec)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.WoWClasses[0].classArmor)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.WoWClasses[0].classRole)
+            </th> *@
+        </tr>
+    </thead>
+    <tbody>
+        
+@{var WoWClasses_Unique = Model.WoWClasses.GroupBy(c=>c.className).Select(y => y.First());}
+        @foreach (var wowclass in WoWClasses_Unique) {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => wowclass.className)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => wowclass.classSpec)
+                </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => wowclass.classArmor)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => wowclass.classRole)
+                </td> *@
+            </tr>
+        }
+
+    </tbody>
+</table>
