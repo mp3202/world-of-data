@@ -72,5 +72,11 @@ namespace world_of_data.Pages.Professors
                 WoWClasses = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
             }
         }
+
+        public void OnGet()
+        {
+            WoWClasses = _context.WoWClass.ToList();
+            Characters = _context.Character.ToList();
+        }
     }
 }
