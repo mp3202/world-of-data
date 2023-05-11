@@ -10,12 +10,12 @@ namespace world_of_data.Models
                 serviceProvider.GetRequiredService<DbContextOptions<WoWClassDbContext>>()))
             {
                 // Look for any classes.
-                if (context.WoWClasses.Any())
+                if (context.WoWClass.Any())
                 {
                     return; // DB has been seeded
                 }
                 
-                context.WoWClasses.AddRange(
+                context.WoWClass.AddRange(
                     // warriors
                     new WoWClass{className = "Warrior", classSpec = "Fury", classArmor = "Plate", classRole = "DPS",
                         Characters = new List<Character> { 

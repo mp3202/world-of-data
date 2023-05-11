@@ -10,7 +10,7 @@ using world_of_data.Models;
 namespace world_of_data.Migrations
 {
     [DbContext(typeof(WoWClassDbContext))]
-    [Migration("20230510172102_InitialCreate")]
+    [Migration("20230511010417_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -79,7 +79,7 @@ namespace world_of_data.Migrations
 
                     b.HasKey("WoWClassID");
 
-                    b.ToTable("WoWClasses");
+                    b.ToTable("WoWClass");
                 });
 
             modelBuilder.Entity("world_of_data.Models.Character", b =>

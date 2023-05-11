@@ -18374,6 +18374,11 @@
   "RootNamespace": "world_of_data",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\MiaPo\\Documents\\SCHOOL\\CIDM3312\\world-of-data\\Pages\\Professors\\Index.cshtml",
+      "TargetPath": "Pages\\Professors\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\MiaPo\\Documents\\SCHOOL\\CIDM3312\\world-of-data\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

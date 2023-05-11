@@ -76,7 +76,7 @@ namespace world_of_data.Migrations
 
                     b.HasKey("WoWClassID");
 
-                    b.ToTable("WoWClasses");
+                    b.ToTable("WoWClass");
                 });
 
             modelBuilder.Entity("world_of_data.Models.Character", b =>

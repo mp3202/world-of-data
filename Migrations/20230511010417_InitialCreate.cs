@@ -11,7 +11,7 @@ namespace world_of_data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "WoWClasses",
+                name: "WoWClass",
                 columns: table => new
                 {
                     WoWClassID = table.Column<int>(type: "INTEGER", nullable: false)
@@ -23,7 +23,7 @@ namespace world_of_data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WoWClasses", x => x.WoWClassID);
+                    table.PrimaryKey("PK_WoWClass", x => x.WoWClassID);
                 });
 
             migrationBuilder.CreateTable(
@@ -44,9 +44,9 @@ namespace world_of_data.Migrations
                 {
                     table.PrimaryKey("PK_Character", x => x.CharacterID);
                     table.ForeignKey(
-                        name: "FK_Character_WoWClasses_WoWClassID",
+                        name: "FK_Character_WoWClass_WoWClassID",
                         column: x => x.WoWClassID,
-                        principalTable: "WoWClasses",
+                        principalTable: "WoWClass",
                         principalColumn: "WoWClassID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -64,7 +64,7 @@ namespace world_of_data.Migrations
                 name: "Character");
 
             migrationBuilder.DropTable(
-                name: "WoWClasses");
+                name: "WoWClass");
         }
     }
 }
