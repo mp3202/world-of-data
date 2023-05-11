@@ -13,71 +13,118 @@
 
 <form>
 	<select asp-for="CurrentSort" asp-items="Model.SortList">
-		<option value="">sort by...</option>
+		<option value="">filter by...</option>
 	</select>
-	<button type="submit">Sort</button>
+	<button type="submit">Filter</button>
 </form>
 
 <table class="table">
     <thead>
-        <tr>
-            <th> @Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].charName) </th>
-            <th> @Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Realm)</th>
-            <th>
-                @{
-                    // Alternate sort order
-                    var firstSort = "ilvl_asc";
-                    if (Model.CurrentSort == "ilvl_asc")
-                    {
-                        firstSort = "ilvl_desc";
-                    }
+        <th>@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].charName)</th>
+        <th>@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Realm)</th>
+        <th>@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].iLVL)</th>
+        <th>@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Arena2v2)</th>
+        <th>@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Arena3v3)</th>
+        <th>@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].MythicScore)</th>
+        <th>@Html.DisplayNameFor(model => model.WoWClass[0].className)</th>
+        <th>@Html.DisplayNameFor(model => model.WoWClass[0].classSpec)</th>
+        @* <th>
+            @{
+                // Alternate sort order
+                var firstSort = "name_asc";
+                if (Model.CurrentSort == "name_asc")
+                {
+                    firstSort = "name_desc";
                 }
-                <!-- FIXME: This will forget the current pagenum! -->
-                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].iLVL)</a>
-            </th>
+            }
+            <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].charName)</a>
+        </th>
+        
+        <th>
+            @{
+                // Alternate sort order
+                firstSort = "realm_asc";
+                if (Model.CurrentSort == "realm_asc")
+                {
+                    firstSort = "realm_desc";
+                }
+            }
+            <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Realm)</a>
+        </th>
 
-            <th>
-                @{
-                    // Alternate sort order
-                    firstSort = "arena2v2_asc";
-                    if (Model.CurrentSort == "arena2v2_asc")
-                    {
-                        firstSort = "arena2v2_desc";
-                    }
+        <th>
+            @{
+                // Alternate sort order
+                firstSort = "ilvl_asc";
+                if (Model.CurrentSort == "ilvl_asc")
+                {
+                    firstSort = "ilvl_desc";
                 }
-                <!-- FIXME: This will forget the current pagenum! -->
-                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Arena2v2)</a>
-            </th>
+            }
+            <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].iLVL)</a>
+        </th>
 
-            <th>
-                @{
-                    // Alternate sort order
-                    firstSort = "arena3v3_asc";
-                    if (Model.CurrentSort == "arena3v3_asc")
-                    {
-                        firstSort = "arena3v3_desc";
-                    }
+        <th>
+            @{
+                // Alternate sort order
+                firstSort = "arena2v2_asc";
+                if (Model.CurrentSort == "arena2v2_asc")
+                {
+                    firstSort = "arena2v2_desc";
                 }
-                <!-- FIXME: This will forget the current pagenum! -->
-                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Arena3v3)</a>
-            </th>
+            }
+            <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Arena2v2)</a>
+        </th>
 
-            <th>
-                @{
-                    // Alternate sort order
-                    firstSort = "mythic_asc";
-                    if (Model.CurrentSort == "mythic_asc")
-                    {
-                        firstSort = "mythic_asc";
-                    }
+        <th>
+            @{
+                // Alternate sort order
+                firstSort = "arena3v3_asc";
+                if (Model.CurrentSort == "arena3v3_asc")
+                {
+                    firstSort = "arena3v3_desc";
                 }
-                <!-- FIXME: This will forget the current pagenum! -->
-                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].MythicScore)</a>
-            </th>
-            <th> @Html.DisplayNameFor(model => model.WoWClass[0].className) </th>
-            <th> @Html.DisplayNameFor(model => model.WoWClass[0].classSpec)</th>
-        </tr>
+            }
+            <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].Arena3v3)</a>
+        </th>
+
+        <th>
+            @{
+                // Alternate sort order
+                firstSort = "mythic_asc";
+                if (Model.CurrentSort == "mythic_asc")
+                {
+                    firstSort = "mythic_desc";
+                }
+            }
+            <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0].MythicScore)</a>
+        </th>
+
+        <th>
+            @{
+                // Alternate sort order
+                firstSort = "name_asc";
+                if (Model.CurrentSort == "name_asc")
+                {
+                    firstSort = "name_desc";
+                }
+            }
+            <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].className)</a>
+        </th>
+        
+        <th>
+            @{
+                // Alternate sort order
+                firstSort = "spec_asc";
+                if (Model.CurrentSort == "spec_asc")
+                {
+                    firstSort = "spec_desc";
+                }
+            }
+            <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].classSpec)</a>
+        </th> *@
     </thead>
+
     <tbody>
         @foreach (var wowClass in Model.WoWClass) {
             @foreach (var character in wowClass.Characters) {
@@ -96,19 +143,3 @@
     </tbody>
 </table>
 <hr />
-@{
-    // If we are on page 1, prevDisabled will be set to the "disabled" class
-    // otherwise, it will be empty. So our previous button will be enabled or disabled based on this logic
-    var prevDisabled = "";
-    if (Model.PageNum <= 1)
-    {
-        prevDisabled = "disabled";
-    }
-}
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <!-- FIXME: These buttons will forget your current sort order! -->
-        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
-        <li class="page-item"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
-    </ul>
-</nav>

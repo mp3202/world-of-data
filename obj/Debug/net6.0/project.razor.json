@@ -18374,13 +18374,13 @@
   "RootNamespace": "world_of_data",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\MiaPo\\Documents\\SCHOOL\\CIDM3312\\world-of-data\\Pages\\Professors\\Index.cshtml",
-      "TargetPath": "Pages\\Professors\\Index.cshtml",
+      "FilePath": "c:\\Users\\MiaPo\\Documents\\SCHOOL\\CIDM3312\\world-of-data\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\MiaPo\\Documents\\SCHOOL\\CIDM3312\\world-of-data\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\MiaPo\\Documents\\SCHOOL\\CIDM3312\\world-of-data\\Pages\\Players\\Index.cshtml",
+      "TargetPath": "Pages\\Players\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18401,11 +18401,6 @@
     {
       "FilePath": "c:\\Users\\MiaPo\\Documents\\SCHOOL\\CIDM3312\\world-of-data\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\MiaPo\\Documents\\SCHOOL\\CIDM3312\\world-of-data\\Pages\\Classes.cshtml",
-      "TargetPath": "Pages\\Classes.cshtml",
       "FileKind": "mvc"
     },
     {

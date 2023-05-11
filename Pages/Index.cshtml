@@ -6,9 +6,11 @@
 
 <h1> List of World of Warcraft Classes</h1>
 <h2> Armor Type, Specializations, and Roles </h2>
+
 <p>
     <a asp-page="Players/Index">View Players</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -41,5 +43,21 @@
         </tr>
     }
     </tbody>
-
 </table>
+<hr />
+@{
+    // If we are on page 1, prevDisabled will be set to the "disabled" class
+    // otherwise, it will be empty. So our previous button will be enabled or disabled based on this logic
+    var prevDisabled = "";
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }
+}
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <!-- FIXME: These buttons will forget your current sort order! -->
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
+        <li class="page-item"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
+    </ul>
+</nav>
