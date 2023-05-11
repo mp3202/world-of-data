@@ -24,9 +24,9 @@
     <tbody>
         @foreach (var wowClass in Model.WoWClasses) {
             <tr>
-                @* <td rowspan="@wowClass.Characters.Count">
+                <td rowspan="@wowClass.Characters.Count">
                     @Html.DisplayFor(model => wowClass.className)
-                </td> *@
+                </td>
                 <td>
                     @Html.DisplayFor(model => wowClass.Characters[0].charName)
                 </td>

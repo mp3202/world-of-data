@@ -42,25 +42,25 @@
     <tbody> *@
 @* foreach(IItem i in BunchOffItems.SelectMany(s => s.Items)){ *@
 
-@foreach (var item in Model.WoWClasses) {
+@foreach (var wowClass in Model.WoWClasses) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Characters[0].charName)
+                @Html.DisplayFor(model => wowClass.Characters[0].charName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Characters[0].Realm)
+                @Html.DisplayFor(model => wowClass.Characters[0].Realm)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Characters[0].iLVL)
+                @Html.DisplayFor(model => wowClass.Characters[0].iLVL)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Characters[0].Arena2v2)
+                @Html.DisplayFor(model => wowClass.Characters[0].Arena2v2)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Characters[0].Arena3v3)
+                @Html.DisplayFor(model => wowClass.Characters[0].Arena3v3)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Characters[0].MythicScore)
+                @Html.DisplayFor(model => wowClass.Characters[0].MythicScore)
             </td>
             @* <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

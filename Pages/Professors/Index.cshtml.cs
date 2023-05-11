@@ -13,14 +13,15 @@ namespace world_of_data.Pages.Professors
     public class IndexModel : PageModel
     {
         private readonly world_of_data.Models.WoWClassDbContext _context;
-
+        // private readonly ILogger<IndexModel> _logger;
+        public IList<WoWClass> WoWClasses { get;set; } = default!;
+        public IList<Character> Characters { get;set; } = default!;
         public IndexModel(world_of_data.Models.WoWClassDbContext context)
         {
             _context = context;
+            // _logger = logger;
         }
 
-        public List<WoWClass> WoWClasses { get;set; } = default!;
-        public List<Character> Characters { get;set; } = default!;
 
         // Paging support
         // PageNum is the current page number we are on
