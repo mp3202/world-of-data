@@ -10,6 +10,8 @@ namespace world_of_data.Models
 		}
 
 		public DbSet<Character> Character {get; set;} = default!;
+		public DbSet<Character> Characters {get; set;} = default!;
+
 		public DbSet<WoWClass> WoWClass {get; set;} = default!;
 	}
 }
