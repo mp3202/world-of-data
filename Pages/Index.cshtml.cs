@@ -18,6 +18,6 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        WoWClasses = _context.WoWClasses.ToList();
+        WoWClasses = _context.WoWClass.ToList();
     }
 }

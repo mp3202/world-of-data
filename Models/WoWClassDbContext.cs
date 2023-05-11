@@ -8,7 +8,8 @@ namespace world_of_data.Models
 			: base(options)
 		{
 		}
-		// public DbSet<User> Users {get; set;} = default!;
-		public DbSet<WoWClass> WoWClasses {get; set;} = default!;
+
+		public DbSet<Character> Character {get; set;} = default!;
+		public DbSet<WoWClass> WoWClass {get; set;} = default!;
 	}
 }

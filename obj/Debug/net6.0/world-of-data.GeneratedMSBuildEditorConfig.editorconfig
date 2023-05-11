@@ -8,41 +8,41 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = world_of_data
 build_property.RootNamespace = world_of_data
-build_property.ProjectDir = c:\Users\MiaPo\Documents\SCHOOL\CIDM3312\world-of-data\
+build_property.ProjectDir = C:\Users\MiaPo\Documents\SCHOOL\CIDM3312\world-of-data\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\MiaPo\Documents\SCHOOL\CIDM3312\world-of-data
+build_property.MSBuildProjectDirectory = C:\Users\MiaPo\Documents\SCHOOL\CIDM3312\world-of-data
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Classes.cshtml]
+[C:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Classes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xhc3Nlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Error.cshtml]
+[C:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Index.cshtml]
+[C:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Privacy.cshtml]
+[C:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/_ViewImports.cshtml]
+[C:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/_ViewStart.cshtml]
+[C:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Shared/_Layout.cshtml]
+[C:/Users/MiaPo/Documents/SCHOOL/CIDM3312/world-of-data/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8ejdkfszqi
