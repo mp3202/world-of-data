@@ -1,16 +1,16 @@
 @page
-@model world_of_data.Pages.Professors.IndexModel
+@model world_of_data.Pages.Players.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Players";
 }
 
-<h1>Index</h1>
+<h1>Players Information</h1>
 
-@* <p>
-    <a asp-page="Create">Create New</a>
-</p> *@
-<!-- Second Sorting Technique with a SelectList -->
+<p>
+    <a asp-page="/index">Back to Classes</a>
+</p>
+
 <form>
 	<select asp-for="CurrentSort" asp-items="Model.SortList">
 		<option value="">sort by...</option>

@@ -27,7 +27,7 @@ namespace world_of_data.Pages
         {
             WoWClasses = _context.WoWClass.ToList();
             // Characters = _context.Characters.ToList();
-            ClassDropDown = new SelectList(WoWClasses, "WoWClassID", "classSpec");
+            ClassDropDown = new SelectList(WoWClasses, "WoWClassID", "className");
         }
 
         public void OnPost()

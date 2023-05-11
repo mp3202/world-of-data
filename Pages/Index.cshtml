@@ -4,37 +4,42 @@
     ViewData["Title"] = "WoW Classes";
 }
 
-<h1> List of World of Warcraft Classes </h1>
-@* <p>
-    <a asp-page="Create">Create New</a>
-</p> *@ 
+<h1> List of World of Warcraft Classes</h1>
+<h2> Armor Type, Specializations, and Roles </h2>
+<p>
+    <a asp-page="Players/Index">View Players</a>
+</p>
 <table class="table">
     <thead>
         <tr>
-            <th>Character Name</th>
-            <th>Realm</th>
-            <th>iLVL</th>
-            <th>Arena2v2</th>
-            <th>Arena3v3</th>
-            <th>Mythic Score</th>
-            <th>Class</th>
-            <th>Specialization</th>
+            <th> @Html.DisplayNameFor(model => model.WoWClasses[0].className) </th>
+            <th> @Html.DisplayNameFor(model => model.WoWClasses[0].classArmor) </th>
+            <th> @Html.DisplayNameFor(model => model.WoWClasses[0].classSpec) </th>
+            <th> @Html.DisplayNameFor(model => model.WoWClasses[0].classRole) </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var wowClass in Model.WoWClasses) {
-            @foreach (var character in wowClass.Characters) {
-                <tr>
-                    <td>@Html.DisplayFor(model => character.charName)</td>
-                    <td>@Html.DisplayFor(model => character.Realm)</td>
-                    <td>@Html.DisplayFor(model => character.iLVL)</td>
-                    <td>@Html.DisplayFor(model => character.Arena2v2)</td>
-                    <td>@Html.DisplayFor(model => character.Arena3v3)</td>
-                    <td>@Html.DisplayFor(model => character.MythicScore)</td>
-                    <td>@Html.DisplayFor(model => wowClass.className)</td>
-                    <td>@Html.DisplayFor(model => wowClass.classSpec)</td>
-                </tr>
-            } 
-        }
+
+     @foreach (var wowclass in Model.WoWClasses) {
+        <tr>
+            <td>
+                @* ONLY PRINTS CLASS NAME IF FIRST OF LIST OR IF DOESNT EQUAL PREVIOUS*@
+                @if (Model.WoWClasses.IndexOf(wowclass) == 0 || wowclass.className != Model.WoWClasses[Model.WoWClasses.IndexOf(wowclass) - 1].className)
+                {
+                    @Html.DisplayFor(modelItem => wowclass.className)
+                }
+            </td>
+            <td>
+                @* ONLY PRINTS ARMOR TYPE IF FIRST OF LIST OR IF DOESNT EQUAL PREVIOUS CLASS*@
+                @if (Model.WoWClasses.IndexOf(wowclass) == 0 || wowclass.className != Model.WoWClasses[Model.WoWClasses.IndexOf(wowclass) - 1].className)
+                {
+                    @Html.DisplayFor(modelItem => wowclass.classArmor)
+                }
+            </td>    
+            <td> @Html.DisplayFor(modelItem => wowclass.classSpec) </td>
+            <td> @Html.DisplayFor(modelItem => wowclass.classRole) </td>
+        </tr>
+    }
     </tbody>
+
 </table>

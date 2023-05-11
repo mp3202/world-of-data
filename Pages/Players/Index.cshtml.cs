@@ -8,12 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using world_of_data.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace world_of_data.Pages.Professors
+namespace world_of_data.Pages.Players
 {
     public class IndexModel : PageModel
     {
         private readonly world_of_data.Models.WoWClassDbContext _context;
-        // private readonly ILogger<IndexModel> _logger;
         public IList<WoWClass> WoWClass { get;set; } = default!;
         public IList<Character> Character { get;set; } = default!;
         public IndexModel(world_of_data.Models.WoWClassDbContext context)
@@ -62,11 +61,12 @@ namespace world_of_data.Pages.Professors
                 switch (CurrentSort)
                 { // asc/desc for ilvl, arena scores, mythic scores
                     case "ilvl_asc":
-                        query = query.OrderBy(p => p.Characters.Select(c => c.iLVL).Min());
+                        query = query.OrderBy(p => p.Characters.Min(c => c.iLVL));
                         break;
                     case "ilvl_desc":
+                        WoWClass = WoWClass.OrderByDescending(w => w.Characters.Min(c => c.iLVL)).ToList();
                         // query = query.OrderByDescending(p => p.Characters.Min(c => c.iLVL));
-                        query = query.OrderByDescending(p => p.Characters.Select(c => c.iLVL).Min());
+                        // query = query.OrderByDescending(p => p.Characters.Select(c => c.iLVL).Min());
                         break;
 
                     case "arena2v2_asc":
