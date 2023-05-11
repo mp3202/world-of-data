@@ -27,10 +27,34 @@
     </thead>
     <tbody>
         
-@{var WoWClasses_Unique = Model.WoWClasses.GroupBy(c=>c.className).Select(y => y.First());}
+@* @{var WoWClasses_Unique = Model.WoWClasses.GroupBy(c=>c.className).Select(y => y.First());}
         @foreach (var wowclass in WoWClasses_Unique) {
 
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => wowclass.className)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => wowclass.classSpec)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => wowclass.classArmor)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => wowclass.classRole)
+                </td>
+            </tr>
+        } *@
+        @foreach (var wowclass in Model.WoWClasses) {
+            <tr>
+                @foreach (var c in wowclass.Characters) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => c.charName)
+                        </td>
+                    </tr>
+                }
+
                 <td>
                     @Html.DisplayFor(modelItem => wowclass.className)
                 </td>
@@ -45,6 +69,5 @@
                 </td> *@
             </tr>
         }
-
     </tbody>
 </table>

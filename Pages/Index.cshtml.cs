@@ -10,6 +10,8 @@ public class IndexModel : PageModel
     private readonly WoWClassDbContext _context; // Replaces the "db" variable from before
     private readonly ILogger<IndexModel> _logger;
     public List<WoWClass> WoWClasses {get; set;} = default!;
+    public List<Character> Characters {get; set;} = default!;
+
     public IndexModel(WoWClassDbContext context, ILogger<IndexModel> logger)
     {
         _context = context;
