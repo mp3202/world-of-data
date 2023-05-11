@@ -1,48 +1,49 @@
 ﻿@page
-@model world_of_data.Pages.IndexModel
-
+@model IndexModel
 @{
-    ViewData["Title"] = "Players";
+    ViewData["Title"] = "WoW Classes";
 }
 
-<h1>Players</h1>
+<h1> List of World of Warcraft Classes </h1>
+@* <p>
+    <a asp-page="Create">Create New</a>
+</p> *@ 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Characters[0].charName)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.WoWClasses[0].classSpec)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Characters[0].Realm)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.WoWClasses[0].classRole)
+            </th> *@
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var c in Model.Characters) {
 
-<div>
-    <h4>Classes</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WoWClass.className)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WoWClass.className)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WoWClass.classSpec)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WoWClass.classSpec)
-        </dd>
-        <!-- Round 3: Loop through each course and display it -->
-        @foreach (var c in Model.WoWClass.Characters)
-        {
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.WoWClass.Characters)
-            </dt>
-            <dd class="col-sm-1">
-                @Html.DisplayFor(model => c.charName)
-            </dd>
-            <!-- Form with button to delete each course -->
-            @* <dt class="col-sm-9">
-                <form method="post">
-                    <input type="hidden" asp-for="CourseIdToDelete" value="@c.CourseId" />
-                    <input type="submit" asp-page-handler="DeleteCourse" asp-route-id="@Model.Professor.ProfessorId" value="Delete Course" class="btn btn-danger btn-sm" />
-                </form>
-            </dt> *@
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => c.charName)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => c.classSpec)
+                </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => c.Realm)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => wowclass.classRole)
+                </td> *@
+            </tr>
         }
-    </dl>
-</div>
-@* <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Professor.ProfessorId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div> *@
+
+    </tbody>
+</table>
