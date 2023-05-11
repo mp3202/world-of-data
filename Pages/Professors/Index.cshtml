@@ -18,57 +18,57 @@
 	<button type="submit">Sort</button>
 </form>
 
-@* <table class="table">
+<table class="table">
     <thead>
         <tr>
             <th>
                 @{
                     // Alternate sort order
-                    var firstSort = "first_asc";
-                    if (Model.CurrentSort == "first_asc")
+                    var firstSort = "ilvl_asc";
+                    if (Model.CurrentSort == "ilvl_asc")
                     {
-                        firstSort = "first_desc";
+                        firstSort = "ilvl_desc";
                     }
                 }
                 <!-- FIXME: This will forget the current pagenum! -->
-                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClass[0].Characters[0])</a>
+                <a asp-page="./Index" asp-route-CurrentSort="@firstSort">@Html.DisplayNameFor(model => model.WoWClasses[0].Characters[0].charName)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Professor[0].LastName)
+                @Html.DisplayNameFor(model => model.WoWClasses[0].classSpec)
             </th>
             <th></th>
         </tr>
     </thead>
-    <tbody> *@
-@* foreach(IItem i in BunchOffItems.SelectMany(s => s.Items)){ *@
+    <tbody> 
 
-@foreach (var wowClass in Model.WoWClasses) {
+<table class="table">
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(model => wowClass.Characters[0].charName)
-            </td>
-            <td>
-                @Html.DisplayFor(model => wowClass.Characters[0].Realm)
-            </td>
-            <td>
-                @Html.DisplayFor(model => wowClass.Characters[0].iLVL)
-            </td>
-            <td>
-                @Html.DisplayFor(model => wowClass.Characters[0].Arena2v2)
-            </td>
-            <td>
-                @Html.DisplayFor(model => wowClass.Characters[0].Arena3v3)
-            </td>
-            <td>
-                @Html.DisplayFor(model => wowClass.Characters[0].MythicScore)
-            </td>
-            @* <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td> *@
+            <th>Character Name</th>
+            <th>Realm</th>
+            <th>iLVL</th>
+            <th>Arena2v2</th>
+            <th>Arena3v3</th>
+            <th>Mythic Score</th>
+            <th>Class</th>
+            <th>Specialization</th>
         </tr>
-}
+    </thead>
+    <tbody>
+        @foreach (var wowClass in Model.WoWClasses) {
+            @foreach (var character in wowClass.Characters) {
+                <tr>
+                    <td>@Html.DisplayFor(model => character.charName)</td>
+                    <td>@Html.DisplayFor(model => character.Realm)</td>
+                    <td>@Html.DisplayFor(model => character.iLVL)</td>
+                    <td>@Html.DisplayFor(model => character.Arena2v2)</td>
+                    <td>@Html.DisplayFor(model => character.Arena3v3)</td>
+                    <td>@Html.DisplayFor(model => character.MythicScore)</td>
+                    <td>@Html.DisplayFor(model => wowClass.className)</td>
+                    <td>@Html.DisplayFor(model => wowClass.classSpec)</td>
+                </tr>
+            } 
+        }
     </tbody>
 </table>
 <hr />
