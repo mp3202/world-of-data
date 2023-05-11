@@ -19,8 +19,8 @@ namespace world_of_data.Pages.Professors
             _context = context;
         }
 
-        public IList<WoWClass> WoWClass { get;set; } = default!;
-        public IList<Character> Character { get;set; } = default!;
+        public List<WoWClass> WoWClasses { get;set; } = default!;
+        public List<Character> Characters { get;set; } = default!;
 
         // Paging support
         // PageNum is the current page number we are on
@@ -68,7 +68,7 @@ namespace world_of_data.Pages.Professors
 
                 // Retrieve just the professors for the page we are on
                 // Use .Skip() and .Take() to select them
-                WoWClass = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+                WoWClasses = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
             }
         }
     }

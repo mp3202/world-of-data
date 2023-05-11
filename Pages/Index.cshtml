@@ -11,39 +11,53 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Characters[0].charName)
-            </th>
-            @* <th>
-                @Html.DisplayNameFor(model => model.WoWClasses[0].classSpec)
-            </th> *@
-            <th>
-                @Html.DisplayNameFor(model => model.Characters[0].Realm)
-            </th>
-            @* <th>
-                @Html.DisplayNameFor(model => model.WoWClasses[0].classRole)
-            </th> *@
+            <th>Character Name</th>
+            <th>Realm</th>
+            <th>iLVL</th>
+            <th>Arena2v2</th>
+            <th>Arena3v3</th>
+            <th>Mythic Score</th>
+            <th>Class</th>
+            <th>Specialization</th>
         </tr>
     </thead>
     <tbody>
-        
-        @foreach (var c in Model.Characters) {
-
+        @foreach (var wowClass in Model.WoWClasses) {
             <tr>
-                <td>
-                    @Html.DisplayFor(model => c.charName)
-                </td>
-                @* <td>
-                    @Html.DisplayFor(modelItem => c.classSpec)
+                @* <td rowspan="@wowClass.Characters.Count">
+                    @Html.DisplayFor(model => wowClass.className)
                 </td> *@
                 <td>
-                    @Html.DisplayFor(modelItem => c.Realm)
+                    @Html.DisplayFor(model => wowClass.Characters[0].charName)
                 </td>
-                @* <td>
-                    @Html.DisplayFor(modelItem => wowclass.classRole)
-                </td> *@
+                <td>
+                    @Html.DisplayFor(model => wowClass.Characters[0].Realm)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => wowClass.Characters[0].iLVL)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => wowClass.Characters[0].Arena2v2)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => wowClass.Characters[0].Arena3v3)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => wowClass.Characters[0].MythicScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => wowClass.className)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => wowClass.classSpec)
+                </td>
             </tr>
+            @for (int i = 1; i < wowClass.Characters.Count; i++) {
+                <tr>
+                    <td>@Html.DisplayFor(model => wowClass.Characters[i].charName)</td>
+                    <td>@Html.DisplayFor(model => wowClass.Characters[i].Realm)</td>
+                </tr>
+            }
         }
-
     </tbody>
 </table>
