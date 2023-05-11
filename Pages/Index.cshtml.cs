@@ -25,22 +25,7 @@ namespace world_of_data.Pages
             _context = context;
             _logger = logger;
         }
-        // public async Task<IActionResult> OnGetAsync(int? id)
-        // {
-        //     if (id == null)
-        //     {
-        //         return NotFound();
-        //     }
 
-        //     // Round 3: Add .Include() to bring in courses
-        //     WoWClass = await _context.WoWClass.Include(c => c.Characters).FirstOrDefaultAsync(m => m.WoWClassID == id);
-            
-        //     if (WoWClass == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     return Page();
-        // }
         public void OnGet()
         {
             WoWClasses = _context.WoWClass.ToList();
