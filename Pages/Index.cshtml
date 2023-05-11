@@ -23,41 +23,18 @@
     </thead>
     <tbody>
         @foreach (var wowClass in Model.WoWClasses) {
-            <tr>
-                <td rowspan="@wowClass.Characters.Count">
-                    @Html.DisplayFor(model => wowClass.className)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => wowClass.Characters[0].charName)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => wowClass.Characters[0].Realm)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => wowClass.Characters[0].iLVL)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => wowClass.Characters[0].Arena2v2)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => wowClass.Characters[0].Arena3v3)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => wowClass.Characters[0].MythicScore)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => wowClass.className)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => wowClass.classSpec)
-                </td>
-            </tr>
-            @for (int i = 1; i < wowClass.Characters.Count; i++) {
+            @foreach (var character in wowClass.Characters) {
                 <tr>
-                    <td>@Html.DisplayFor(model => wowClass.Characters[i].charName)</td>
-                    <td>@Html.DisplayFor(model => wowClass.Characters[i].Realm)</td>
+                    <td>@Html.DisplayFor(model => character.charName)</td>
+                    <td>@Html.DisplayFor(model => character.Realm)</td>
+                    <td>@Html.DisplayFor(model => character.iLVL)</td>
+                    <td>@Html.DisplayFor(model => character.Arena2v2)</td>
+                    <td>@Html.DisplayFor(model => character.Arena3v3)</td>
+                    <td>@Html.DisplayFor(model => character.MythicScore)</td>
+                    <td>@Html.DisplayFor(model => wowClass.className)</td>
+                    <td>@Html.DisplayFor(model => wowClass.classSpec)</td>
                 </tr>
-            }
+            } 
         }
     </tbody>
 </table>
