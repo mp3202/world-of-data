@@ -14,8 +14,8 @@ namespace world_of_data.Pages.Professors
     {
         private readonly world_of_data.Models.WoWClassDbContext _context;
         // private readonly ILogger<IndexModel> _logger;
-        public IList<WoWClass> WoWClasses { get;set; } = default!;
-        public IList<Character> Characters { get;set; } = default!;
+        public IList<WoWClass> WoWClass { get;set; } = default!;
+        public IList<Character> Character { get;set; } = default!;
         public IndexModel(world_of_data.Models.WoWClassDbContext context)
         {
             _context = context;
@@ -36,13 +36,13 @@ namespace world_of_data.Pages.Professors
         {
             if (_context.WoWClass != null)
             {
-                // WoWClasses = await _context.WoWClass.ToListAsync();
-                WoWClasses = await _context.WoWClass.Include(w => w.Characters).ToListAsync();
-                Characters = _context.Character.ToList();
+                // WoWClass = await _context.WoWClass.ToListAsync();
+                WoWClass = await _context.WoWClass.Include(w => w.Characters).ToListAsync();
+                Character = await _context.Character.ToListAsync();
+                // Character = _context.Character.ToList();
              
-                // WoWClasses = await _context.WoWClass.ToListAsync();
-
                 // Sorting support
+                // var query = _context.WoWClass.Include(p => p.Characters).Select(p => p);
                 var query = _context.WoWClass.Select(p => p);
                 List<SelectListItem> sortItems = new List<SelectListItem> {
                     new SelectListItem { Text = "iLVL Ascending", Value = "ilvl_asc" },
@@ -62,10 +62,11 @@ namespace world_of_data.Pages.Professors
                 switch (CurrentSort)
                 { // asc/desc for ilvl, arena scores, mythic scores
                     case "ilvl_asc":
-                        query = query.OrderBy(p => p.Characters.Min(c => c.iLVL));
+                        query = query.OrderBy(p => p.Characters.Select(c => c.iLVL).Min());
                         break;
                     case "ilvl_desc":
-                        query = query.OrderByDescending(p => p.Characters.Min(c => c.iLVL));
+                        // query = query.OrderByDescending(p => p.Characters.Min(c => c.iLVL));
+                        query = query.OrderByDescending(p => p.Characters.Select(c => c.iLVL).Min());
                         break;
 
                     case "arena2v2_asc":
@@ -88,9 +89,7 @@ namespace world_of_data.Pages.Professors
                         break;
                 }
 
-                // Retrieve just the professors for the page we are on
-                // Use .Skip() and .Take() to select them
-                WoWClasses = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+                WoWClass = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
             }
 
         }

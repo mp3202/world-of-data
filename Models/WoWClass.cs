@@ -25,9 +25,9 @@ namespace world_of_data.Models
         // Setup navigation property on ONE side, List of MANY side
         public List<Character> Characters {get; set;} = new List<Character>();
 
-        public override string ToString()
-        {
-            return $"{className}";
-        }
+        // public override string ToString()
+        // {
+        //     return $"{className}";
+        // }
     }
 }
